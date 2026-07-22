@@ -1,68 +1,81 @@
-# google-play-dashboard
-A live, deployed interactive dashboard built with Streamlit and Plotly that empowers stakeholders to explore Google Play Store application metrics and features live REST API integration.
-Project Repository Structure
+# 📊 Google Play Store Dashboard
+
+A live, interactive dashboard built with **Streamlit** and **Plotly** that lets stakeholders explore Google Play Store app metrics — no SQL or Python required.
+
+🔗 **Live Demo:** [app-play-dashboard.streamlit.app](https://app-play-dashboard.streamlit.app/)
+
+---
+
+## 📁 Project Structure
+
+```
 google-play-dashboard/
 ├── .streamlit/
-│   └── Run app.py              # Streamlit visual theme configuration
+│   └── config.toml          # Streamlit visual theme configuration
 ├── data/
-│   └── googleplaystore.csv     # Self-contained dataset
-├── app.py                      # Main Streamlit dashboard code
-├── requirements.txt            # Streamlit & deployment dependencies
-└── README.md                   # Live URL, API explanation & setup guide
-
-
-## 🔗 Live Public Dashboard URL
-
-🚀 **Access the deployed dashboard here:**  
-`https://app-play-dashboard.streamlit.app/`  
-
+│   └── googleplaystore.csv  
+├── app.py                   # Main Streamlit dashboard code
+├── requirements.txt         # Dependencies
+└── README.md                 # Project documentation
+```
 
 ---
 
-## 1. Dashboard Overview & Features
+## ✨ Features
 
-This interactive dashboard allows non-technical users to slice, filter, and visualize app store trends dynamically without writing SQL or Python.
+### Interactive Filters
+| Widget | Function |
+|---|---|
+| **Category Selectbox** | Filter apps by market category |
+| **Rating Slider** | Set a minimum rating threshold |
+| **App Type Multiselect** | Toggle between Free and Paid apps |
 
-### Interactive Components
-* **Input Widgets:**
-  1. `Category Selectbox`: Filter dashboard content by market category.
-  2. `Rating Score Slider`: Dynamically filter apps based on a minimum rating boundary.
-  3. `App Type Multiselect`: Toggle between `Free` and `Paid` application tiers.
-* **Responsive Visualizations (Plotly):**
-  1. **Horizontal Bar Chart:** Displays the top 10 most reviewed apps in the filtered selection.
-  2. **Overlay Histogram:** Shows the distribution of user ratings broken down by free vs. paid tiers.
-  3. **Bubble Scatter Plot:** Explores the relationship between app size (in KB) and rating, with bubble area scaled by installation counts.
-* **Live Reactive Data Table:** Displays filtered rows and key columns in real-time.
+### Visualizations (Plotly)
+- **Top 10 Most Reviewed Apps** — horizontal bar chart
+- **Rating Distribution** — overlay histogram, Free vs. Paid
+- **Size vs. Rating** — bubble scatter plot, sized by install count
 
----
-
-## 2. External REST API Integration Details
-
-* **Target Endpoint URL:**  
-  `https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current_weather=true`
-* **HTTP Request Method:** `GET`
-* **API Description:**  
-  The dashboard issues an asynchronous `GET` request using Python's `requests` library to fetch current atmospheric and climate conditions for the primary tech hub sector (San Francisco / Silicon Valley).
-* **Extracted JSON Response Fields Displayed:**
-  * `temperature`: Current temperature reading in degrees Celsius (°C).
-  * `windspeed`: Current wind speed in km/h.
-  * `time`: Timestamp of the latest sensor update.
-
-
+### Live Data Table
+Reactively updates to show filtered rows and key columns in real time.
 
 ---
 
-## 3. Local Setup & Execution Guide
+## 🌐 Live API Integration
 
-Replicate the environment and run the app locally:
+The dashboard also demonstrates external API connectivity by fetching real-time weather data:
+
+- **Endpoint:** `https://api.open-meteo.com/v1/forecast`
+- **Method:** `GET`
+- **Fields displayed:** temperature (°C), wind speed (km/h), timestamp
+
+> *Included to showcase live REST API integration as part of the capstone requirements, independent of the core Play Store dataset.*
+
+---
+
+## 🚀 Run Locally
 
 ```bash
 # 1. Clone the repository
-git clone <your-public-github-link>
+git clone https://github.com/pramodj551-oss/google-play-dashboard.git
 cd google-play-dashboard
 
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Launch the Streamlit server
+# 3. Launch the app
 streamlit run app.py
+```
+
+---
+
+## 🛠️ Tech Stack
+
+`Python` · `Streamlit` · `Plotly` · `Pandas` · `Requests`
+
+---
+
+## 📬 Contact
+
+**Pramod Prakash Jadhav**
+📧 pramodj551@gmail.com
+🔗 [LinkedIn](https://www.linkedin.com/in/pramod-prakash-jadhav-42ba2281)
